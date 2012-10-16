@@ -72,6 +72,10 @@
 		var returnValue = 0;
 		var directory = fileSystem.GetFolder(path);
 
+		if (fileSystem.FileExists(path + '\\.jshintignore')) {
+			return 0;
+		}
+
 		for (var filesEnumerator = new Enumerator(directory.Files);
 				!filesEnumerator.atEnd();
 				 filesEnumerator.moveNext()) {
